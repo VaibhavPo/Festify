@@ -42,9 +42,6 @@ class RBACService {
 
   static async updatePermissions(role, permissions) {
     try {
-      const perms = await RBACPermsRepository.getPermissionsForRole(role);
-      if (!perms) throw new BadRequestError("Role not found");
-
       // cannot remove permissions:read and permissions:update from admin
       if (role === "admin") {
         permissions.push("permissions:read");

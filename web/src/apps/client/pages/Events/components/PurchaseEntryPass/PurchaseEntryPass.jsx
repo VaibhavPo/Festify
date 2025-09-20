@@ -40,7 +40,7 @@ const handleSubmit = (e) => {
   e.preventDefault();
   setError(null);
 
-  if (event.registrationFeesInINR > 0) {
+  if (event.entryPassPriceInINR > 0) {
     // Paid event → open payment modal directly
     setShowPaymentModal(true);
   } else {
@@ -55,7 +55,7 @@ const handleSubmit = (e) => {
     const accountNumber = import.meta.env.VITE_UPI_ACCOUNT_NUMBER || event.upiAccountNumber || "demoaccount";
     const ifsc = import.meta.env.VITE_UPI_IFSC || event.upiIfsc || "demoifsc";
     const name = import.meta.env.VITE_UPI_NAME ||  "CIESYZC";
-    const amount = event.registrationFeesInINR || 1;
+    const amount = event.entryPassPriceInINR || 1;
     return `upi://pay?pa=${accountNumber}@${ifsc}.ifsc.npci&pn=${name}&am=${amount}&cu=INR`;
   };
 
