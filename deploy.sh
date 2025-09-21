@@ -56,3 +56,4 @@ echo "3. Configure environment variables in Vercel"
 echo "4. Deploy backend first, then frontend"
 echo ""
 echo "📚 For detailed instructions, see: VERCEL_DEPLOYMENT_GUIDE.md"
+
